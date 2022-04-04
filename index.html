@@ -1,68 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <title>Frontend Mentor | Job Listings</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="js/main.js" defer></script>
-</head>
-<body>
-  <div class="card">
-    <div class="card-logo">
-      <img src="images/manage.svg" alt="Manage" class="logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Job Listings</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="filter hidden">
+      <button class="filter__categorie">
+        Testando
+        <span class="delete-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+            <path
+              fill="#FFF"
+              fill-rule="evenodd"
+              d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
+            />
+          </svg>
+        </span>
+      </button>
+      <button class="filter__clear">Clear</button>
     </div>
-    <div class="card-header">
-      <h2 class="company">Manage</h2>
-      <p class="new">New!</p>
-      <p class="featured">Featured</p>
-    </div>
-    <h3 class="position"><a href="#">Fullstack Developer</a></h3>
-    <div class="card-info">
-      <p class="postedAt">1d ago</p>
-      <p class="contract">Part Time</p>
-      <p class="location">Remote</p>
-    </div>
-    <div class="card-categories">
-      <button class="role">Fullstack</button>
-      <button class="level">Midweight</button>
-      <button class="languages">Python</button>
-      <button class="tools">React</button>
-    </div>
-  </div>
 
-  <template id="card-template">
-    <div class="card">
-      <div class="card-logo">
-        <img src="" alt="" class="logo">
+    <main>
+      <h1 class="sr-only">Job List Cards</h1>
+      <div class="card">
+        <div class="card-logo">
+          <img src="images/manage.svg" alt="Manage" class="logo" />
+        </div>
+        <div class="card-header">
+          <h2 class="company">Manage</h2>
+          <p class="new">New!</p>
+          <p class="featured">Featured</p>
+        </div>
+        <h3 class="position"><a href="#">Fullstack Developer</a></h3>
+        <div class="card-info">
+          <p class="info" data-postedAt>1d ago</p>
+          <p class="info" data-contract>Part Time</p>
+          <p class="info" data-location>Remote</p>
+        </div>
+        <div class="card-categories">
+          <button class="categorie" data-role>Fullstack</button>
+          <button class="categorie" data-level>Midweight</button>
+          <button class="categorie" data-languages>Python</button>
+          <button class="categorie" data-tools>React</button>
+        </div>
       </div>
-      <div class="card-header">
-        <h2 class="company"></h2>
-        <p class="new"></p>
-        <p class="featured"></p>
+    </main>
+
+    <footer>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded with <i class="fa-solid fa-heart"></i> by
+        <a href="https://github.com/LucasWeidas" target="_blank">Lucas Weidas</a>.
+      </p>
+    </footer>
+    <!-- Templates -->
+    <template id="card-template">
+      <div class="card">
+        <div class="card-logo">
+          <img src="" alt="" class="logo" />
+        </div>
+        <div class="card-header">
+          <h2 class="company"></h2>
+          <p class="new">New!</p>
+          <p class="featured">Featured</p>
+        </div>
+        <h3 class="position"><a href="#"></a></h3>
+        <div class="card-info">
+          <p class="info" data-postedAt></p>
+          <p class="info" data-contract></p>
+          <p class="info" data-location></p>
+        </div>
+        <div class="card-categories">
+          <button class="categorie" data-role></button>
+          <button class="categorie" data-level></button>
+          <button class="categorie" data-languages></button>
+          <button class="categorie" data-tools></button>
+        </div>
       </div>
-      <h3 class="position"><a href="#"></a></h3>
-      <div class="card-info">
-        <p class="postedAt"></p>
-        <p class="contract"></p>
-        <p class="location"></p>
-      </div>
-      <div class="card-categories">
-        <button class="role"></button>
-        <button class="level"></button>
-        <button class="languages"></button>
-        <button class="tools"></button>
-      </div>
-    </div>
-  </template>
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded with <i class="fa-solid fa-heart"></i> by <a href="https://github.com/LucasWeidas" target="_blank">Lucas Weidas</a>.
-    </p>
-  </footer>
-</body>
+    </template>
+
+    <template id="filter__categorie-template">
+      <button class="filter__categorie">
+        Testando
+        <span class="delete-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+            <path
+              fill="#FFF"
+              fill-rule="evenodd"
+              d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
+            />
+          </svg>
+        </span>
+      </button>
+    </template>
+  </body>
 </html>

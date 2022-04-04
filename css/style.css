@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary-100: hsl(180, 29%, 50%);
+  --clr-neutral-100: hsl(180, 52%, 96%);
+  --clr-neutral-150: hsl(180, 31%, 95%);
+  --clr-neutral-200: hsl(180, 8%, 52%);
+  --clr-neutral-250: hsl(180, 14%, 20%);
+
+  --ff-default: 'Spartan', sans-serif;
+}
+
+body {
+  font-family: var(--ff-default);
+  font-size: 0.938rem;
+}
