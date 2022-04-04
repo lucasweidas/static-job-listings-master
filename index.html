@@ -19,23 +19,22 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
-    <div class="filter hidden">
-      <button class="filter__categorie">
-        Testando
-        <span class="delete-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
-            <path
-              fill="#FFF"
-              fill-rule="evenodd"
-              d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
-            />
-          </svg>
-        </span>
-      </button>
-      <button class="filter__clear">Clear</button>
-    </div>
-
     <main>
+      <div class="filter hidden">
+        <div class="filter-categories">
+          <button class="filter-categories__btn">
+            Testando
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="delete-icon">
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
+              />
+            </svg>
+          </button>
+        </div>
+        <button class="filter__clear-btn">Clear</button>
+      </div>
       <h1 class="sr-only">Job List Cards</h1>
       <div class="card">
         <div class="card-logo">
@@ -43,20 +42,20 @@
         </div>
         <div class="card-header">
           <h2 class="company">Manage</h2>
-          <p class="new">New!</p>
-          <p class="featured">Featured</p>
+          <p class="tag new">New!</p>
+          <p class="tag featured">Featured</p>
         </div>
         <h3 class="position"><a href="#">Fullstack Developer</a></h3>
-        <div class="card-info">
+        <div class="card-infos">
           <p class="info" data-postedAt>1d ago</p>
           <p class="info" data-contract>Part Time</p>
           <p class="info" data-location>Remote</p>
         </div>
         <div class="card-categories">
-          <button class="categorie" data-role>Fullstack</button>
-          <button class="categorie" data-level>Midweight</button>
-          <button class="categorie" data-languages>Python</button>
-          <button class="categorie" data-tools>React</button>
+          <button class="card-categories__btn" data-role>Fullstack</button>
+          <button class="card-categories__btn" data-level>Midweight</button>
+          <button class="card-categories__btn" data-languages>Python</button>
+          <button class="card-categories__btn" data-tools>React</button>
         </div>
       </div>
     </main>
@@ -79,22 +78,22 @@
           <p class="featured">Featured</p>
         </div>
         <h3 class="position"><a href="#"></a></h3>
-        <div class="card-info">
+        <div class="card-infos">
           <p class="info" data-postedAt></p>
           <p class="info" data-contract></p>
           <p class="info" data-location></p>
         </div>
         <div class="card-categories">
-          <button class="categorie" data-role></button>
-          <button class="categorie" data-level></button>
-          <button class="categorie" data-languages></button>
-          <button class="categorie" data-tools></button>
+          <button class="card-categories__btn" data-role></button>
+          <button class="card-categories__btn" data-level></button>
+          <button class="card-categories__btn" data-languages></button>
+          <button class="card-categories__btn" data-tools></button>
         </div>
       </div>
     </template>
 
-    <template id="filter__categorie-template">
-      <button class="filter__categorie">
+    <template id="filter-cate-btn-template">
+      <button class="filter-categories__btn">
         Testando
         <span class="delete-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
