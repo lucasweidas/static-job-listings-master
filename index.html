@@ -20,42 +20,125 @@
   </head>
   <body>
     <main>
+      <!-- Filter -->
       <div class="filter hidden">
         <div class="filter-categories">
-          <button class="filter-categories__btn">
-            Testando
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="delete-icon">
-              <path
-                fill="#FFF"
-                fill-rule="evenodd"
-                d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
-              />
-            </svg>
+          <button class="categorie-btn">
+            <span>Frontend</span>
+            <div class="delete-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+                <path
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                  d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
+                />
+              </svg>
+            </div>
+          </button>
+          <button class="categorie-btn">
+            <span>CSS</span>
+            <div class="delete-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+                <path
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                  d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
+                />
+              </svg>
+            </div>
+          </button>
+          <button class="categorie-btn">
+            <span>JavaScript</span>
+            <div class="delete-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+                <path
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                  d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
+                />
+              </svg>
+            </div>
           </button>
         </div>
-        <button class="filter__clear-btn">Clear</button>
+        <button class="clear-btn">Clear</button>
       </div>
       <h1 class="sr-only">Job List Cards</h1>
-      <div class="card">
+      <!-- Job Cards -->
+      <div class="card highlight">
         <div class="card-logo">
-          <img src="images/manage.svg" alt="Manage" class="logo" />
+          <img src="images/manage.svg" alt="Manage" data-logo />
         </div>
-        <div class="card-header">
-          <h2 class="company">Manage</h2>
-          <p class="tag new">New!</p>
-          <p class="tag featured">Featured</p>
-        </div>
-        <h3 class="position"><a href="#">Fullstack Developer</a></h3>
-        <div class="card-infos">
-          <p class="info" data-postedAt>1d ago</p>
-          <p class="info" data-contract>Part Time</p>
-          <p class="info" data-location>Remote</p>
+        <div class="card-post">
+          <div class="card-header">
+            <h2 class="company" data-company>Manage</h2>
+            <div class="tag new">
+              <p data-new>New!</p>
+            </div>
+            <div class="tag featured">
+              <p data-featured>Featured</p>
+            </div>
+          </div>
+          <a href="#" class="position">
+            <h3 data-position>Fullstack Developer</h3>
+          </a>
+          <div class="card-infos">
+            <p data-postedAt>1d ago</p>
+            <p data-contract>Part Time</p>
+            <p data-location>Remote</p>
+          </div>
         </div>
         <div class="card-categories">
-          <button class="card-categories__btn" data-role>Fullstack</button>
-          <button class="card-categories__btn" data-level>Midweight</button>
-          <button class="card-categories__btn" data-languages>Python</button>
-          <button class="card-categories__btn" data-tools>React</button>
+          <button class="categorie-btn" data-role>
+            <span>Fullstack</span>
+          </button>
+          <button class="categorie-btn" data-level>
+            <span>Midweight</span>
+          </button>
+          <button class="categorie-btn" data-languages>
+            <span>Python</span>
+          </button>
+          <button class="categorie-btn" data-tools>
+            <span>React</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-logo">
+          <img src="images/manage.svg" alt="Manage" data-logo />
+        </div>
+        <div class="card-post">
+          <div class="card-header">
+            <h2 class="company">Photosnap</h2>
+            <div class="tag new">
+              <p>New!</p>
+            </div>
+            <div class="tag featured">
+              <p>Featured</p>
+            </div>
+          </div>
+          <a href="#" class="position">
+            <h3>Senior Frontend Developer</h3>
+          </a>
+          <div class="card-infos">
+            <p data-postedAt>1d ago</p>
+            <p data-contract>Part Time</p>
+            <p data-location>Remote</p>
+          </div>
+        </div>
+        <div class="card-categories">
+          <button class="categorie-btn" data-role>
+            <span>Fullstack</span>
+          </button>
+          <button class="categorie-btn" data-level>
+            <span>Midweight</span>
+          </button>
+          <button class="categorie-btn" data-languages>
+            <span>Python</span>
+          </button>
+          <button class="categorie-btn" data-tools>
+            <span>React</span>
+          </button>
         </div>
       </div>
     </main>
@@ -70,32 +153,46 @@
     <template id="card-template">
       <div class="card">
         <div class="card-logo">
-          <img src="" alt="" class="logo" />
+          <img src="" alt="" />
         </div>
         <div class="card-header">
           <h2 class="company"></h2>
-          <p class="new">New!</p>
-          <p class="featured">Featured</p>
+          <div class="tag new">
+            <p>New!</p>
+          </div>
+          <div class="tag featured">
+            <p>Featured</p>
+          </div>
         </div>
-        <h3 class="position"><a href="#"></a></h3>
+        <a href="#" class="position">
+          <h3></h3>
+        </a>
         <div class="card-infos">
           <p class="info" data-postedAt></p>
           <p class="info" data-contract></p>
           <p class="info" data-location></p>
         </div>
         <div class="card-categories">
-          <button class="card-categories__btn" data-role></button>
-          <button class="card-categories__btn" data-level></button>
-          <button class="card-categories__btn" data-languages></button>
-          <button class="card-categories__btn" data-tools></button>
+          <button class="categorie-btn" data-role>
+            <span></span>
+          </button>
+          <button class="categorie-btn" data-level>
+            <span></span>
+          </button>
+          <button class="categorie-btn" data-languages>
+            <span></span>
+          </button>
+          <button class="categorie-btn" data-tools>
+            <span></span>
+          </button>
         </div>
       </div>
     </template>
 
     <template id="filter-cate-btn-template">
-      <button class="filter-categories__btn">
-        Testando
-        <span class="delete-icon">
+      <button class="categorie-btn">
+        <span></span>
+        <div class="delete-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
             <path
               fill="#FFF"
@@ -103,7 +200,7 @@
               d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
             />
           </svg>
-        </span>
+        </div>
       </button>
     </template>
   </body>
