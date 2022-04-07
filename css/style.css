@@ -18,7 +18,6 @@
 
   --ff-default: 'Spartan', sans-serif;
   --fs-default: 0.938rem;
-  --fs-button: clamp(0.813rem, 3vw, 0.875rem);
   --border-r: 0.25rem;
   --card-shadow: 0 6px 12px 1px hsl(180, 14%, 20%, 0.1);
   --transition-fast: ease 200ms;
@@ -28,6 +27,7 @@
 /* General Styles */
 body {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +48,7 @@ button {
   border: none;
   cursor: pointer;
   font-family: var(--ff-default);
-  font-size: var(--fs-button);
+  font-size: 0.75rem;
 }
 
 /*******************************************/
@@ -75,7 +75,6 @@ main {
   border-radius: var(--border-r);
   box-shadow: var(--card-shadow);
   padding: 1.25rem clamp(1.25rem, 4vw, 2.5rem);
-  /* margin-block-end: 0.25rem; */
   margin-block-end: 1.25rem;
 }
 
@@ -86,7 +85,7 @@ main {
 }
 
 .categorie-btn {
-  height: 2rem;
+  height: 1.875rem;
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
@@ -121,6 +120,7 @@ main {
 }
 
 .clear-btn {
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--clr-neutral-300);
   background-color: transparent;
@@ -140,16 +140,24 @@ main {
   background-color: var(--clr-primary-200);
 }
 
-/* Job Card */
+/* Job Cards Container */
+.job-cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+
+/* Card */
 .card {
   width: 100%;
   display: grid;
+  justify-items: flex-start;
+  grid-template-areas: 'post' 'categories';
   position: relative;
   background-color: var(--clr-white);
   border-radius: var(--border-r);
   box-shadow: var(--card-shadow);
   padding: 2rem 1.5rem 1.5rem;
-  margin-block-end: 2.5rem;
 }
 
 .card::before {
@@ -174,7 +182,7 @@ main {
   position: absolute;
   top: -1.5rem;
   left: 1.5rem;
-  grid-area: 'logo';
+  grid-area: logo;
 }
 
 .card-logo img {
@@ -182,29 +190,33 @@ main {
 }
 
 .card-post {
-  grid-area: 'post';
+  width: 100%;
+  grid-area: post;
 }
 
 .card-header {
-  height: 1.5rem;
+  min-height: 1.5rem;
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap-reverse;
   align-items: center;
-  column-gap: 0.5rem;
+  gap: 0.5rem 1rem;
   margin-block-end: 0.75rem;
 }
 
 .company {
   font-size: clamp(0.875rem, 3vw, 0.938rem);
   color: var(--clr-primary-200);
-  margin-inline-end: 1rem;
+}
+
+.tags {
+  display: flex;
+  column-gap: 0.5rem;
 }
 
 .tag {
-  height: 100%;
+  height: 1.5rem;
   color: var(--clr-white);
   text-transform: uppercase;
-  font-size: 0.75rem;
   font-size: 0.625rem;
   font-weight: 500;
   border-radius: 0.75rem;
@@ -225,10 +237,9 @@ main {
 }
 
 .position {
-  width: fit-content;
-  display: block;
+  display: inline-block;
   color: var(--clr-neutral-500);
-  font-size: clamp(0.938rem, 3vw, 1rem);
+  font-size: 0.875rem;
   text-decoration: none;
   margin-block-end: 1rem;
   transition: color var(--transition-fast);
@@ -241,12 +252,13 @@ main {
 
 .card-infos {
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
   position: relative;
   color: var(--clr-neutral-300);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  border-bottom: 1px solid var(--clr-neutral-300);
-  padding-block-end: 1.25rem;
+  padding-block-end: 0.875rem;
 }
 
 .card-infos p {
@@ -260,35 +272,90 @@ main {
   width: 4px;
   height: 4px;
   position: relative;
-  top: 5px;
+  top: 3px;
   background-color: var(--clr-neutral-300);
   border-radius: 50%;
   margin-inline: 0.5rem;
 }
 
 .card-categories {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-block-start: 1rem;
-  grid-area: 'categories';
+  border-top: 1px solid var(--clr-neutral-300);
+  padding-block-start: 1rem;
+  grid-area: categories;
+}
+
+/*******************************************/
+/* Footer */
+footer {
+  padding: 2.5rem 1.5rem 1rem;
+  margin-block-start: auto;
+}
+
+.attribution {
+  color: var(--clr-neutral-500);
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  text-align: center;
+  line-height: 1.7em;
+}
+
+.attribution a {
+  color: var(--clr-neutral-500);
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.attribution a:hover,
+.attribution a:focus-visible {
+  /* color: var(--clr-primary-200); */
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.fa-heart {
+  color: var(--clr-primary-200);
 }
 
 /*******************************************/
 /* Media Queries */
-@media (min-width: 320px) {
+@media (min-width: 375px) {
+  button {
+    font-size: clamp(0.813rem, 3vw, 0.875rem);
+  }
+
+  .categorie-btn {
+    height: 2rem;
+  }
+
   .filter {
     flex-wrap: nowrap;
   }
+
+  .position {
+    font-size: clamp(0.938rem, 3vw, 1rem);
+  }
+
+  .card-infos {
+    font-size: 0.875rem;
+    padding-block-end: 1.25rem;
+  }
+
+  .card-infos p:nth-child(1)::after,
+  .card-infos p:nth-child(2)::after {
+    top: 5px;
+  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
   .card {
     justify-items: flex-start;
     align-items: center;
     gap: 1.5rem;
-    grid-template-columns: min-content max-content 1fr;
-    grid-template-areas: 'logo post categories';
+    grid-auto-columns: 5.5rem 1fr;
+    grid-template-areas: 'logo post' 'categories categories';
   }
 
   .card-logo {
@@ -296,17 +363,39 @@ main {
     position: static;
   }
 
+  .card-post {
+    justify-self: flex-start;
+  }
+
   .position {
     margin-block-end: 0.75rem;
   }
 
   .card-infos {
-    border-bottom: none;
     padding-block-end: 0;
   }
 
   .card-categories {
-    margin-block-start: 0;
+    justify-self: flex-start;
+  }
+}
+
+@media (min-width: 950px) {
+  .card {
+    grid-auto-columns: 5.5rem max-content 1fr;
+    grid-template-areas: 'logo post categories';
+    padding: 2.5rem 2rem;
+  }
+
+  .card-logo {
+    width: 5.5rem;
+    position: static;
+  }
+
+  .card-categories {
+    width: auto;
+    border-top: none;
+    padding-block-start: 0;
     justify-self: flex-end;
   }
 }
