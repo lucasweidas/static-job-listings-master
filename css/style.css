@@ -51,6 +51,10 @@ button {
   font-size: 0.75rem;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /*******************************************/
 /* Main */
 main {
@@ -381,6 +385,10 @@ footer {
 }
 
 @media (min-width: 950px) {
+  body::before {
+    background-image: url('../images/bg-header-desktop.svg');
+  }
+
   .card {
     grid-auto-columns: 5.5rem max-content 1fr;
     grid-template-areas: 'logo post categories';
