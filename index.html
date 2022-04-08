@@ -16,14 +16,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js" type="module"></script>
   </head>
   <body>
     <main>
       <!-- Filter -->
       <div class="filter hidden">
         <div class="filter-categories">
-          <button class="categorie-btn">
+          <!-- <button class="categorie-btn">
             <span>Frontend</span>
             <div class="delete-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
@@ -34,38 +34,14 @@
                 />
               </svg>
             </div>
-          </button>
-          <button class="categorie-btn">
-            <span>CSS</span>
-            <div class="delete-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
-                <path
-                  fill="#FFF"
-                  fill-rule="evenodd"
-                  d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
-                />
-              </svg>
-            </div>
-          </button>
-          <button class="categorie-btn">
-            <span>JavaScript</span>
-            <div class="delete-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
-                <path
-                  fill="#FFF"
-                  fill-rule="evenodd"
-                  d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
-                />
-              </svg>
-            </div>
-          </button>
+          </button> -->
         </div>
         <button class="clear-btn">Clear</button>
       </div>
       <!-- Job Cards -->
-      <section class="job-cards">
+      <section class="job-cards filter-off">
         <h1 class="sr-only">Job List Cards</h1>
-        <div class="card highlight">
+        <!-- <div class="card highlight">
           <div class="card-logo">
             <img src="images/manage.svg" alt="Manage" data-logo />
           </div>
@@ -178,7 +154,7 @@
               <span>React</span>
             </button>
           </div>
-        </div>
+        </div> -->
       </section>
     </main>
 
@@ -190,57 +166,54 @@
     </footer>
     <!-- Templates -->
     <template id="card-template">
-      <div class="card" data-id="">
+      <div class="card">
         <div class="card-logo">
           <img src="" alt="" data-logo />
         </div>
-        <div class="card-header">
-          <h2 class="company" data-company></h2>
-          <div class="tag new">
-            <p data-new></p>
+        <div class="card-post">
+          <div class="card-header">
+            <h2 class="company" data-company></h2>
           </div>
-          <div class="tag featured">
-            <p data-featured></p>
+          <a href="#" class="position">
+            <h3 data-position></h3>
+          </a>
+          <div class="card-infos">
+            <p data-postedAt></p>
+            <p data-contract></p>
+            <p data-location></p>
           </div>
         </div>
-        <a href="#" class="position">
-          <h3 data-position></h3>
-        </a>
-        <div class="card-infos">
-          <p class="info" data-postedAt></p>
-          <p class="info" data-contract></p>
-          <p class="info" data-location></p>
+        <div class="card-categories"></div>
+      </div>
+    </template>
+
+    <template id="tags-template">
+      <div class="tags">
+        <div class="tag new">
+          <p data-new>New!</p>
         </div>
-        <div class="card-categories">
-          <button class="categorie-btn" data-role>
-            <span></span>
-          </button>
-          <button class="categorie-btn" data-level>
-            <span></span>
-          </button>
-          <button class="categorie-btn" data-languages>
-            <span></span>
-          </button>
-          <button class="categorie-btn" data-tools>
-            <span></span>
-          </button>
+        <div class="tag featured">
+          <p data-featured>Featured</p>
         </div>
       </div>
     </template>
 
-    <template id="filter-cate-btn-template">
-      <button class="categorie-btn">
+    <template id="categorie-btn-template">
+      <button class="categorie-btn" data-categorie="">
         <span></span>
-        <div class="delete-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
-            <path
-              fill="#FFF"
-              fill-rule="evenodd"
-              d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
-            />
-          </svg>
-        </div>
       </button>
+    </template>
+
+    <template id="delete-icon-template">
+      <div class="delete-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+          <path
+            fill="#FFF"
+            fill-rule="evenodd"
+            d="M11.314 0l2.121 2.121-4.596 4.596 4.596 4.597-2.121 2.121-4.597-4.596-4.596 4.596L0 11.314l4.596-4.597L0 2.121 2.121 0l4.596 4.596L11.314 0z"
+          />
+        </svg>
+      </div>
     </template>
   </body>
 </html>

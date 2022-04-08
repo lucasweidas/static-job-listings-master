@@ -61,6 +61,7 @@ main {
   width: min(calc(100% - 3rem), 69.375rem);
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
 }
 
@@ -73,8 +74,6 @@ main {
   gap: 1.25rem 1rem;
   position: relative;
   top: -2.25rem;
-  left: 50%;
-  transform: translateX(-50%);
   background-color: var(--clr-white);
   border-radius: var(--border-r);
   box-shadow: var(--card-shadow);
@@ -109,6 +108,7 @@ main {
 .categorie-btn span {
   position: relative;
   bottom: -2px;
+  pointer-events: none;
 }
 
 .delete-icon {
@@ -121,6 +121,7 @@ main {
   margin-inline-end: -0.5rem;
   border-radius: 0 var(--border-r) var(--border-r) 0;
   transition: background-color var(--transition-fast);
+  pointer-events: none;
 }
 
 .clear-btn {
@@ -146,9 +147,14 @@ main {
 
 /* Job Cards Container */
 .job-cards {
+  width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
+}
+
+.job-cards.filter-off {
+  margin-block-start: 3.5rem;
 }
 
 /* Card */
@@ -314,7 +320,6 @@ footer {
 
 .attribution a:hover,
 .attribution a:focus-visible {
-  /* color: var(--clr-primary-200); */
   text-decoration: underline;
   opacity: 1;
 }
@@ -354,6 +359,14 @@ footer {
 }
 
 @media (min-width: 700px) {
+  .filter {
+    margin-block-end: 0.25rem;
+  }
+
+  .job-cards.filter-off {
+    margin-block-start: 4.75rem;
+  }
+
   .card {
     justify-items: flex-start;
     align-items: center;
@@ -402,8 +415,9 @@ footer {
 
   .card-categories {
     width: auto;
+    justify-content: flex-end;
+    justify-self: flex-end;
     border-top: none;
     padding-block-start: 0;
-    justify-self: flex-end;
   }
 }
