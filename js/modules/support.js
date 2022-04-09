@@ -1,10 +1,6 @@
 import * as data from './data.js';
 
-export function loadAllJobCards() {
-  createJobCards();
-}
-
-async function createJobCards() {
+export async function loadAllJobCards() {
   const jobData = await data.getAllJobs();
   const JobsContainer = document.querySelector('.job-cards');
   const cardTemplate = document.querySelector('#card-template');
@@ -37,14 +33,14 @@ async function createJobCards() {
       hasFeatured && card.classList.add('highlight');
     }
 
-    categories.append(addCategorie('role', job.role), addCategorie('level', job.level));
+    categories.append(addCategorie(job.role), addCategorie(job.level));
 
     job.languages.forEach(language => {
-      categories.appendChild(addCategorie('languages', language));
+      categories.appendChild(addCategorie(language));
     });
 
     job.tools.forEach(tool => {
-      categories.appendChild(addCategorie('tools', tool));
+      categories.appendChild(addCategorie(tool));
     });
 
     JobsContainer.appendChild(cardClone);
@@ -70,13 +66,13 @@ function addTag(hasNew, hasFeatured) {
   return tagsClone;
 }
 
-function addCategorie(categorie, text) {
+function addCategorie(categorie) {
   const buttonClone = document.querySelector('#categorie-btn-template').content.cloneNode(true);
   const button = buttonClone.querySelector('.categorie-btn');
   const span = button.querySelector('span');
 
   button.dataset.categorie = categorie;
-  span.innerText = text;
+  span.innerText = categorie;
 
   return buttonClone;
 }
