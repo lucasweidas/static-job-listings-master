@@ -14,14 +14,6 @@ jobCards.addEventListener('click', evt => {
   }
 });
 
-jobCards.addEventListener('touchstart', evt => {
-  evt.stopImmediatePropagation();
-  
-  if (evt.target.matches('.categorie-btn')) {
-    filter.addCategorieToFilter(evt.target);
-  }
-}, { passive: true });
-
 // Filter Container Event Listeners
 filterContainer.addEventListener('click', evt => {
   if (evt.target.matches('.categorie-btn')) {
@@ -32,15 +24,3 @@ filterContainer.addEventListener('click', evt => {
     filter.resetFilteredCategories();
   }
 });
-
-filterContainer.addEventListener('touchstart', evt => {
-  evt.stopImmediatePropagation();
-  
-  if (evt.target.matches('.categorie-btn')) {
-    filter.removeCategorieFromFilter(evt.target);
-  }
-
-  if (evt.target.matches('.clear-btn')) {
-    filter.resetFilteredCategories();
-  }
-}, { passive: true });
