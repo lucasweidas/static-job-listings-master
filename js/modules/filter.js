@@ -42,14 +42,16 @@ export default function Filter() {
       const cards = [...document.querySelectorAll('.card')];
 
       cards.forEach(card => {
-        const hasCategorie = filteredCategories.reduce((result, categorie) => {
+        const categoriesCount = filteredCategories.reduce((result, categorie) => {
           const button = card.querySelector(`[data-categorie='${categorie}']`);
-          if (button) result = true;
+          if (button) ++result;
           return result;
-        }, false);
+        }, 0);
 
-        if (!hasCategorie) return card.classList.add('hidden');
-        card.classList.remove('hidden');
+        if (categoriesCount === filteredCategories.length) {
+          return card.classList.remove('hidden');
+        }
+        card.classList.add('hidden');
       });
     },
     resetFilteredCategories() {
