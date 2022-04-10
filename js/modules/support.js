@@ -1,7 +1,5 @@
-import * as data from './data.js';
-
 export async function loadAllJobCards() {
-  const jobData = await data.getAllJobs();
+  const jobData = await getAllJobs();
   const JobsContainer = document.querySelector('.job-cards');
   const cardTemplate = document.querySelector('#card-template');
 
@@ -75,4 +73,10 @@ function addCategorie(categorie) {
   span.innerText = categorie;
 
   return buttonClone;
+}
+
+async function getAllJobs() {
+  const response = await fetch('./data.json');
+  const data = await response.json();
+  return data;
 }
